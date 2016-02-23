@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+	<timeOut>2000</timeOut>
+	<password></password>
+	<dbIndex>0</dbIndex>
+	<poolConfig>
+		<maxActive>20</maxActive>
+		<maxIdle>10</maxIdle>
+		<minIdle>2</minIdle>
+		<maxWait>300</maxWait>
+		<lifo></lifo>
+		<minEvictableIdleTimeMillis></minEvictableIdleTimeMillis>
+		<softMinEvictableIdleTimeMillis></softMinEvictableIdleTimeMillis>
+		<numTestsPerEvictionRun></numTestsPerEvictionRun>
+		<evictionPolicyClassName></evictionPolicyClassName>
+		<testOnBorrow></testOnBorrow>
+		<testOnReturn></testOnReturn>
+		<testWhileIdle></testWhileIdle>
+		<timeBetweenEvictionRunsMillis></timeBetweenEvictionRunsMillis>
+		<jmxEnabled></jmxEnabled>
+		<jmxNamePrefix></jmxNamePrefix>
+		<!-- <whenExhaustedAction>1</whenExhaustedAction> -->
+	</poolConfig>
+	<hostAndPorts>
+		<hostAndPort>
+		115.28.146.244:6379
+		</hostAndPort>	
+	</hostAndPorts>	
+	<!-- <hostAndPorts>
+		<hostAndPort>192.168.1.14:6379</hostAndPort>
+		<hostAndPort>192.168.1.14:6380</hostAndPort>
+		<hostAndPort>192.168.1.16:6381</hostAndPort>	
+		<hostAndPort>192.168.1.16:6382</hostAndPort>	
+		<hostAndPort>192.168.1.14:6383</hostAndPort>	
+		<hostAndPort>192.168.1.14:6384</hostAndPort>	
+	</hostAndPorts>	 -->
+</config>
+
