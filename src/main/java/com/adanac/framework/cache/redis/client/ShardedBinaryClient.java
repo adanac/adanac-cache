@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import redis.clients.jedis.JedisCommands;
 import redis.clients.jedis.ZParams;
 
 /**
@@ -12,11 +13,17 @@ import redis.clients.jedis.ZParams;
  * @author adanac
  * @version 1.0
  */
-public interface BinaryRedisClient {
+public interface ShardedBinaryClient extends JedisCommands {
 	/**
 	 * 功能描述: <br>
 	 * 将字符串值 value 关联到 key 。 如果 key 已经持有其他值， SET 就覆写旧值，无视类型。 对于某个原本带有生存时间的键来说， 当
 	 * SET 命令成功在这个键上执行时， 这个键原有的 TTL 将被清除。
+	 *
+	 * @param key   key
+	 * @param value value
+	 * @return result
+	 * @see [相关类/方法](可选)
+	 * @since [产品/模块版本](可选)
 	 */
 	String set(final Serializable key, final Serializable value);
 
@@ -24,12 +31,23 @@ public interface BinaryRedisClient {
 	 * 功能描述: <br>
 	 * 将值 value 关联到 key ，并将 key 的生存时间设为 seconds (以秒为单位)。 如果 key 已经存在，覆写旧值。
 	 *
+	 * @param key   key
+	 * @param time  time
+	 * @param value value
+	 * @return result
+	 * @see [相关类/方法](可选)
+	 * @since [产品/模块版本](可选)
 	 */
 	String setex(final Serializable key, final int time, final Serializable value);
 
 	/**
 	 * 功能描述: <br>
 	 * 返回 key 所关联的字符串值。 如果 key 不存在那么返回特殊值 nil
+	 *
+	 * @param key key
+	 * @return result
+	 * @see [相关类/方法](可选)
+	 * @since [产品/模块版本](可选)
 	 */
 	<T extends Serializable> T get(final Serializable key);
 
