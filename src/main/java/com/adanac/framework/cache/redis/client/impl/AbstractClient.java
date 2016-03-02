@@ -36,6 +36,7 @@ import org.xml.sax.InputSource;
 import com.adanac.framework.cache.redis.WarningService;
 import com.adanac.framework.cache.redis.exception.RedisClientException;
 import com.adanac.framework.cache.redis.util.ResourceUtils;
+import com.adanac.framework.cache.redis.util.SNWarningService;
 import com.bn.framework.statistics.VersionStatistics;
 import com.bn.framework.uniconfig.client.UniconfigClient;
 import com.bn.framework.uniconfig.client.UniconfigClientImpl;
