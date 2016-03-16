@@ -32,11 +32,11 @@ import org.xml.sax.InputSource;
 import com.adanac.framework.cache.redis.WarningService;
 import com.adanac.framework.cache.redis.exception.RedisClientException;
 import com.adanac.framework.cache.redis.util.ResourceUtils;
-import com.adanac.framework.client.UniconfigClient;
-import com.adanac.framework.client.UniconfigClientImpl;
-import com.adanac.framework.client.UniconfigListener;
-import com.adanac.framework.client.UniconfigNode;
 import com.adanac.framework.statistics.VersionStatistics;
+import com.adanac.framework.uniconfig.client.UniconfigClient;
+import com.adanac.framework.uniconfig.client.UniconfigClientImpl;
+import com.adanac.framework.uniconfig.client.UniconfigListener;
+import com.adanac.framework.uniconfig.client.UniconfigNode;
 import com.adanac.framework.utils.InPutStreamToStr;
 
 import redis.clients.jedis.HostAndPort;

@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
+import com.adanac.framework.cache.redis.annotations.CacheExecuteOrder;
 import com.adanac.framework.cache.redis.annotations.CacheOperate;
 import com.adanac.framework.cache.redis.annotations.MyCacheable;
 
@@ -68,20 +69,22 @@ public class RedisCacheAspect {
 			return joinPointProceedResult;
 		}
 
-		/*
-		 * //缓存操作执行时机 之后 if(methodCacheable.order() ==
-		 * CacheExecuteOrder.cacheLast){ Object joinPointProceedResult =
-		 * joinPoint.proceed(); cacheOperate(methodCacheable, joinPoint); return
-		 * joinPointProceedResult; }
-		 * 
-		 * 
-		 * //缓存操作执行时机 之前 if(methodCacheable.order() ==
-		 * CacheExecuteOrder.cacheFirst){ cacheOperate(methodCacheable,
-		 * joinPoint); Object joinPointProceedResult = joinPoint.proceed();
-		 * return joinPointProceedResult; }
-		 */
+		// 缓存操作执行时机 之后
+		if (methodCacheable.order() == CacheExecuteOrder.cacheLast) {
+			Object joinPointProceedResult = joinPoint.proceed();
+			cacheOperate(methodCacheable, joinPoint);
+			return joinPointProceedResult;
+		}
+
+		// 缓存操作执行时机 之前
+		if (methodCacheable.order() == CacheExecuteOrder.cacheFirst) {
+			cacheOperate(methodCacheable, joinPoint);
+			Object joinPointProceedResult = joinPoint.proceed();
+			return joinPointProceedResult;
+		}
 
 		return null;
+
 	}
 
 	private void cacheOperate(MyCacheable methodCacheable, ProceedingJoinPoint joinPoint) throws Throwable {
