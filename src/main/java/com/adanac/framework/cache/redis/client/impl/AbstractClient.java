@@ -51,6 +51,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.exceptions.JedisConnectionException;
 
 public class AbstractClient implements InitializingBean {
+
 	private static final Logger logger = LoggerFactory.getLogger(AbstractClient.class);
 	protected static final Map<String, MyJedisCluster> jedisClusterPools = new ConcurrentHashMap<String, MyJedisCluster>();
 
