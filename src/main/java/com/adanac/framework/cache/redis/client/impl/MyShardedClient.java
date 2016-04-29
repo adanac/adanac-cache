@@ -90,7 +90,8 @@ public class MyShardedClient extends AbstractShardedClient implements ShardedRed
 	}
 
 	/**
-	 * 功能描述: <br>  PIPELINE处理
+	 * 功能描述: <br>
+	 * PIPELINE处理
 	 * 
 	 */
 	public ShardedJedisPipeline getPipeline() {

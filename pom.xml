@@ -33,7 +33,6 @@
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.7.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -42,17 +41,14 @@
         <dependency>
             <groupId>com.adanac.framework</groupId>
             <artifactId>adanac-framework-common</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <dependency>
         	<groupId>com.adanac.framework</groupId>
         	<artifactId>adanac-zk-client</artifactId>
-        	<version>1.0.0</version>
         </dependency>
         <dependency>
         	<groupId>com.adanac.framework</groupId>
         	<artifactId>adanac-uniconfig-client</artifactId>
-        	<version>1.0.0</version>
         </dependency>
         <dependency>
 			<groupId>dom4j</groupId>
@@ -106,6 +102,20 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
+						<!-- 
+                        <compilerArgs>
+                            <arg>-XX:MaxPermSize=512M</arg>
+                        </compilerArgs> -->
+					</configuration>
+				</plugin>
 			
         </plugins>
     </build>
