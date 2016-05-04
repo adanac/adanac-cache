@@ -113,7 +113,7 @@
 						<!-- 
                         <compilerArgs>
                             <arg>-XX:MaxPermSize=512M</arg>
-                        </compilerArgs> -->
+                        </compilerArgs>--> 
 					</configuration>
 				</plugin>
 			
